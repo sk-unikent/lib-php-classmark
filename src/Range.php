@@ -30,7 +30,7 @@ class Range
      */
     public function __construct($start, $end) {
         if ($start->compareTo($end)) {
-            throw new \InvalidArgumentException("Start must be greater than finish.");
+            throw new \InvalidArgumentException("Start must be greater than end.");
         }
 
         $this->start = $start;
@@ -42,5 +42,12 @@ class Range
      */
     public function contains($classmark) {
         return !$this->start->compareTo($classmark) && $this->end->compareTo($classmark);
+    }
+    
+    /**
+     * String representation.
+     */
+    public function __toString() {
+        return $this->start . "-" . $this->end;
     }
 }
