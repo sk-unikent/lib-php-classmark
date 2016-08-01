@@ -132,4 +132,11 @@ class Classmark
 
         return $this->subject == $classmark->subject ? 0 : ($this->subject > $classmark->subject ? 1 : -1);
     }
+    
+    /**
+     * String representation
+     */
+    public function __toString() {
+        return trim("{$this->prefix}{$this->subject}{$this->subdivision}{$this->author}");
+    }
 }
