@@ -37,6 +37,6 @@ class Range
      * Does this range contain the given classmark?
      */
     public function contains($classmark) {
-        // TODO.
+        return !$this->start->compareTo($classmark) && $this->end->compareTo($classmark);
     }
 }
