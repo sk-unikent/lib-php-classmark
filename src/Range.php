@@ -29,6 +29,10 @@ class Range
      * Constructor.
      */
     public function __construct($start, $end) {
+        if ($start->compareTo($end)) {
+            throw new \InvalidArgumentException("Start must be greater than finish.");
+        }
+
         $this->start = $start;
         $this->end = $end;
     }
