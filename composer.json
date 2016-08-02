@@ -16,10 +16,11 @@
    },
    "autoload": {
       "psr-4": {
-         "unikent\\ReadingLists\\": ["src/"]
+         "unikent\\Classmark\\": ["src/"]
       }
    },
    "require-dev": {
-      "phpdocumentor/phpdocumentor": "2.7"
+      "phpunit/phpunit": "5.*",
+      "phpdocumentor/phpdocumentor": "2.*"
    }
 }

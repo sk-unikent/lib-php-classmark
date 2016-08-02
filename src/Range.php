@@ -29,8 +29,8 @@ class Range
      * Constructor.
      */
     public function __construct($start, $end) {
-        if ($start->compareTo($end)) {
-            throw new \InvalidArgumentException("Start must be greater than end.");
+        if ($start->compareTo($end) === 1) {
+            throw new \InvalidArgumentException("Start must be less than than end.");
         }
 
         $this->start = $start;
@@ -41,9 +41,11 @@ class Range
      * Does this range contain the given classmark?
      */
     public function contains($classmark) {
-        return !$this->start->compareTo($classmark) && $this->end->compareTo($classmark);
+        $start = $this->start->compareTo($classmark);
+        $end = $this->end->compareTo($classmark);
+        return ($start === 0 || $start === -1) && ($end === 0 || $end === 1);
     }
-    
+
     /**
      * String representation.
      */

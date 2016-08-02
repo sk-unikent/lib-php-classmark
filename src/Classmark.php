@@ -40,7 +40,7 @@ class Classmark
     /**
      * Construct a new classmark object.
      */
-    public function __construct($subject, $subdivision, $author, $prefix) {
+    public function __construct($subject, $subdivision = '', $author = '', $prefix = '') {
         $this->subject = $subject;
         $this->subdivision = $subdivision;
         $this->author = $author;
@@ -132,7 +132,7 @@ class Classmark
 
         return $this->subject == $classmark->subject ? 0 : ($this->subject > $classmark->subject ? 1 : -1);
     }
-    
+
     /**
      * String representation
      */
