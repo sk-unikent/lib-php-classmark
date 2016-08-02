@@ -55,6 +55,6 @@ class Range
      */
     public function __toString()
     {
-        return $this->start.'-'.$this->end;
+        return $this->start . '-' . $this->end;
     }
 }
