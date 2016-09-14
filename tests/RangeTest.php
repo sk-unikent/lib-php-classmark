@@ -102,5 +102,9 @@ class RangeTest extends PHPUnit_Framework_TestCase
         $classmarka = new \unikent\Classmark\Classmark("BR", "1.S3");
         $classmarkb = new \unikent\Classmark\Classmark("BR", ".481.R3");
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+
+        $classmarka = new \unikent\Classmark\Classmark("PN", "513");
+        $classmarkb = new \unikent\Classmark\Classmark("PN", "1993.5.G7.H552");
+        $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
     }
 }
