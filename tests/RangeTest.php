@@ -66,41 +66,43 @@ class RangeTest extends PHPUnit_Framework_TestCase
     /**
      * Test simple ranges.
      */
-    public function testDottedSubdivision() {
-        $classmarka = new \unikent\Classmark\Classmark("A", "5.GREL");
-        $classmarkb = new \unikent\Classmark\Classmark("B", "8.BLAH");
+    public function testDottedSubdivision()
+    {
+        $classmarka = new \unikent\Classmark\Classmark('A', '5.GREL');
+        $classmarkb = new \unikent\Classmark\Classmark('B', '8.BLAH');
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("A", "6.GREL")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("A", "5.GREL")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("A", "9.GREL")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("AG", "5.GREL")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("B", "5.GREL")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("B", "3")));
-        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("A", "4.GREL")));
-        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("B", "9.BLAH")));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('A', '6.GREL')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('A', '5.GREL')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('A', '9.GREL')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('AG', '5.GREL')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('B', '5.GREL')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('B', '3')));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark('A', '4.GREL')));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark('B', '9.BLAH')));
     }
 
     /**
      * Test simple ranges.
      */
-    public function testAdvancedDottedSubdivision() {
-        $classmarka = new \unikent\Classmark\Classmark("BR", "4.T54");
-        $classmarkb = new \unikent\Classmark\Classmark("BR", "20.E7");
+    public function testAdvancedDottedSubdivision()
+    {
+        $classmarka = new \unikent\Classmark\Classmark('BR', '4.T54');
+        $classmarkb = new \unikent\Classmark\Classmark('BR', '20.E7');
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("BR", "6")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("BR", "6.Tc")));
-        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("BR", "4.T55")));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('BR', '6')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('BR', '6.Tc')));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark('BR', '4.T55')));
 
-        $classmarka = new \unikent\Classmark\Classmark("K", "600.Z9");
-        $classmarkb = new \unikent\Classmark\Classmark("K", "3240.4");
-        $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
-
-        $classmarka = new \unikent\Classmark\Classmark("BS", "476.R45");
-        $classmarkb = new \unikent\Classmark\Classmark("BS", "2560");
+        $classmarka = new \unikent\Classmark\Classmark('K', '600.Z9');
+        $classmarkb = new \unikent\Classmark\Classmark('K', '3240.4');
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
 
-        $classmarka = new \unikent\Classmark\Classmark("BR", "1.S3");
-        $classmarkb = new \unikent\Classmark\Classmark("BR", ".481.R3");
+        $classmarka = new \unikent\Classmark\Classmark('BS', '476.R45');
+        $classmarkb = new \unikent\Classmark\Classmark('BS', '2560');
+        $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+
+        $classmarka = new \unikent\Classmark\Classmark('BR', '1.S3');
+        $classmarkb = new \unikent\Classmark\Classmark('BR', '.481.R3');
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
     }
 }
