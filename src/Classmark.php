@@ -127,6 +127,24 @@ class Classmark
 
         // If subjects are equal we base it on subdivision.
         if ($this->subject == $classmark->subject) {
+            // If there is a dot, split there and compare pieces.
+            if (strpos($this->subdivision, '.') !== false && strpos($classmark->subdivision, '.') !== false) {
+                $pieces = explode('.', $this->subdivision);
+                $otherpieces = explode('.', $classmark->subdivision);
+
+                foreach ($pieces as $i => $piece) {
+                    if ($piece == $otherpieces[$i] || !isset($otherpieces[$i])) {
+                        continue;
+                    }
+
+                    if ($piece > $otherpieces[$i]) {
+                        return 1;
+                    } else {
+                        return -1;
+                    }
+                }
+            }
+
             return $this->subdivision == $classmark->subdivision ? 0 : ($this->subdivision > $classmark->subdivision ? 1 : -1);
         }
 
