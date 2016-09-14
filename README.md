@@ -2,6 +2,7 @@ lib-php-classmark
 ====================
 
 [![Latest Stable Version](https://poser.pugx.org/unikent/lib-php-classmark/v/stable.png)](https://packagist.org/packages/unikent/lib-php-classmark)
+[![StyleCI](https://styleci.io/repos/64657137/shield)](https://styleci.io/repos/64657137)
 
 Full API docs available here: http://unikent.github.io/lib-php-classmark/
 
