@@ -94,5 +94,13 @@ class RangeTest extends PHPUnit_Framework_TestCase
         $classmarka = new \unikent\Classmark\Classmark("K", "600.Z9");
         $classmarkb = new \unikent\Classmark\Classmark("K", "3240.4");
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+
+        $classmarka = new \unikent\Classmark\Classmark("BS", "476.R45");
+        $classmarkb = new \unikent\Classmark\Classmark("BS", "2560");
+        $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+
+        $classmarka = new \unikent\Classmark\Classmark("BR", "1.S3");
+        $classmarkb = new \unikent\Classmark\Classmark("BR", ".481.R3");
+        $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
     }
 }
