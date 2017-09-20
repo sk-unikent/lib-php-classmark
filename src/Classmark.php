@@ -82,7 +82,7 @@ class Classmark
         }
 
         // Strip off the first set of uppercase alpha characters.
-        if (preg_match('/(^[A-Z]{1,2})/', $classmark, $matches)) {
+        if (preg_match('/(^[A-Z]{1,3})/', $classmark, $matches)) {
             $subject = $matches[1];
             $classmark = trim(substr($classmark, strlen($subject)));
         }
@@ -127,7 +127,7 @@ class Classmark
 
     /**
      * Comparison.
-     * Returns 0 if we match, 1 is we are greater than $classmark or -1 if we are less than $classmark.
+     * Returns 0 if we match, 1 if we are greater than $classmark or -1 if we are less than $classmark.
      */
     public function compareTo($classmark)
     {
@@ -143,7 +143,7 @@ class Classmark
                 $otherpieces = explode('.', trim($classmark->subdivision, '.\t\n\r'));
 
                 foreach ($pieces as $i => $piece) {
-                    if ($piece == $otherpieces[$i] || !isset($otherpieces[$i])) {
+                    if (!isset($otherpieces[$i]) || $piece == $otherpieces[$i]) {
                         continue;
                     }
 

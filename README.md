@@ -11,7 +11,7 @@ PHP library for helping developers with classmarks
 Add this to your composer require:
  * "unikent/lib-php-classmark": "dev-master"
 
-Then get lists like so:
+Then compare classmarks like so:
 ```
 $parser = new \unikent\Classmark\Classmark();
 

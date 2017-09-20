@@ -94,17 +94,30 @@ class RangeTest extends PHPUnit_Framework_TestCase
         $classmarka = new \unikent\Classmark\Classmark("K", "600.Z9");
         $classmarkb = new \unikent\Classmark\Classmark("K", "3240.4");
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("K", "601")));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("K", "600")));
 
         $classmarka = new \unikent\Classmark\Classmark("BS", "476.R45");
         $classmarkb = new \unikent\Classmark\Classmark("BS", "2560");
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("BS", "479")));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("BS", "475")));
 
         $classmarka = new \unikent\Classmark\Classmark("BR", "1.S3");
         $classmarkb = new \unikent\Classmark\Classmark("BR", ".481.R3");
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("BR", "2")));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("BR", "3987")));
 
         $classmarka = new \unikent\Classmark\Classmark("PN", "513");
         $classmarkb = new \unikent\Classmark\Classmark("PN", "1993.5.G7.H552");
         $range = new \unikent\Classmark\Range($classmarka, $classmarkb);
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("PN", "514")));
+        $this->assertTrue($range->contains(new \unikent\Classmark\Classmark("PN", "1993")));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("PN", "512")));
+        $this->assertFalse($range->contains(new \unikent\Classmark\Classmark("PN", "1994")));
+
+        $range = new \unikent\Classmark\Range(\unikent\Classmark\Classmark::parse("KJE 6467"), \unikent\Classmark\Classmark::parse("KN 112.6"));
+        $this->assertFalse($range->contains(\unikent\Classmark\Classmark::parse('KJE946')));
     }
 }
