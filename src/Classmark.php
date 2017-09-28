@@ -82,7 +82,7 @@ class Classmark
         }
 
         // Strip off the first set of uppercase alpha characters.
-        if (preg_match('/(^[A-Z]{1,3})/', $classmark, $matches)) {
+        if (preg_match('/(^[A-Z]{1,4})/', $classmark, $matches)) {
             $subject = $matches[1];
             $classmark = trim(substr($classmark, strlen($subject)));
         }
